@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Verification</h1>
+    <p>Please click the button below to verify your email.</p>
+    <a href="#" class="btn" id="verifyBtn">Verify Email</a>
+
+    <script>
+        // Replace this with your actual verification URL
+        var verificationUrl = "http://yourdomain.com/verify";
+
+        // Function to redirect when button is clicked
+        document.getElementById("verifyBtn").addEventListener("click", function() {
+            window.location.href = verificationUrl;
+        });
+    </script>
+</body>
+</html>
