@@ -43,7 +43,7 @@
         var token = urlParams.get('token');
 
         // Update the verification URL
-        var verificationUrl = "https://verification-bot-kohl.vercel.app/verify?token=" + token;
+        var verificationUrl = "http://localhost:8080/verify?token=" + token;
 
         if (token) {
             document.getElementById('verifyBtn').addEventListener('click', function() {
