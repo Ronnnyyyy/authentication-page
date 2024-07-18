@@ -34,18 +34,25 @@
 </head>
 <body>
     <h1>Email Verification</h1>
-    <p>Please click the button below to verify your email.</p>
+    <p id="message">Please click the button below to verify your email.</p>
     <a href="#" class="btn" id="verifyBtn">Verify Email</a>
 
     <script>
-        // Replace this with your actual verification URL
-        var verificationUrl = "https://ronnnyyyy.github.io/authentication-page/verify";
+        // Extract token from URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var token = urlParams.get('token');
 
+        // Update the verification URL
+        var verificationUrl = "https://user-verification-bot.vercel.app/verify?token=" + token;
 
-        // Function to redirect when button is clicked
-        document.getElementById("verifyBtn").addEventListener("click", function() {
-            window.location.href = verificationUrl;
-        });
+        if (token) {
+            document.getElementById('verifyBtn').addEventListener('click', function() {
+                window.location.href = verificationUrl;
+            });
+        } else {
+            document.getElementById('message').textContent = "Invalid or missing token.";
+            document.getElementById('verifyBtn').style.display = 'none';
+        }
     </script>
 </body>
 </html>
