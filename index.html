@@ -38,21 +38,25 @@
     <a href="#" class="btn" id="verifyBtn">Verify Email</a>
 
     <script>
-        // Extract token from URL
-        var urlParams = new URLSearchParams(window.location.search);
-        var token = urlParams.get('token');
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Extract token from URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var token = urlParams.get('token');
+            console.log(token);
+            console.log('hello');
 
-        // Update the verification URL
-        var verificationUrl = "http://localhost:8080/verify?token=" + token;
+            // Update the verification URL
+            var verificationUrl = "http://localhost:8080/verify?token=" + token;
 
-        if (token) {
-            document.getElementById('verifyBtn').addEventListener('click', function() {
-                window.location.href = verificationUrl;
-            });
-        } else {
-            document.getElementById('message').textContent = "Invalid or missing token.";
-            document.getElementById('verifyBtn').style.display = 'none';
-        }
+            if (token) {
+                document.getElementById('verifyBtn').addEventListener('click', function() {
+                    window.location.href = verificationUrl;
+                });
+            } else {
+                document.getElementById('message').textContent = "Invalid or missing token.";
+                document.getElementById('verifyBtn').style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
